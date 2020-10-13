@@ -17,7 +17,6 @@ class _LoginState extends State<Login> {
       });
     }
 
-    ;
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
@@ -77,7 +76,7 @@ class _LoginState extends State<Login> {
             Container(
               child: RaisedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, WorkOrder.routeName);
+                  Navigator.pushNamed(context, '/second');
                 },
                 child: Text("Login"),
               ),
