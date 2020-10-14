@@ -78,6 +78,16 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Padding(
+                padding: EdgeInsets.only(top: 16.0),
+              ),
+              Text(
+                "Aplikasi Mobile AMC",
+                style: TextStyle(
+                  color: Color(0xFF001048),
+                  fontSize: 16.0,
+                ),
+              ),
+              Padding(
                   padding: EdgeInsets.only(top: 20.0)
               ),
               Container(
