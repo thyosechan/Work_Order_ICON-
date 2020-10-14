@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:woicon/work_order/work_order.dart';
 import 'package:http/http.dart' as http;
 
 class Login extends StatefulWidget {
@@ -32,7 +31,7 @@ class _LoginState extends State<Login> {
     // String namaAPI = data['nama'];
     // String id = data['id'];
     if (value == 1) {
-      Navigator.pushNamed(context, '/second');
+      Navigator.pushNamed(context, '/location');
       print(pesan);
     } else {
       showDialog(

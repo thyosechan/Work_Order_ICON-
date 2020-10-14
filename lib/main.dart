@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:woicon/login/login.dart';
 import 'package:woicon/work_order/work_order.dart';
+import 'package:woicon/work_order/check_location.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => Login(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => WorkOrder()
+        '/second': (context) => WorkOrder(),
+        '/location': (context) => DashboardScreen()
       },
       debugShowCheckedModeBanner: false,
     );
