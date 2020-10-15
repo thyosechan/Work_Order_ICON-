@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => Login(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => WorkOrder(),
+        '/work': (context) => WorkOrder(),
         '/location': (context) => DashboardScreen()
       },
       debugShowCheckedModeBanner: false,

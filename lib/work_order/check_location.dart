@@ -15,13 +15,13 @@ class _MapsHomeState extends State<DashboardScreen> {
   Widget _child;
   bool _isButtonDisabled = true;
   @override
-  void initState(){
+  void initState() {
     // _child=RippleIndicator("Getting Location");
     getCurrentLocation();
     super.initState();
   }
 
-  void getCurrentLocation() async{
+  void getCurrentLocation() async {
     Position res = await Geolocator().getCurrentPosition();
     setState(() {
       position = res;
@@ -37,13 +37,10 @@ class _MapsHomeState extends State<DashboardScreen> {
       body: Container(
         child: Column(
           children: [
-            Expanded(
-              flex: 8,
-              child: _child
-            ),
+            Expanded(flex: 8, child: _child),
             Expanded(
               flex: 2,
-              child:Container(
+              child: Container(
                 color: Colors.white,
                 child: Row(
                   children: [
@@ -60,8 +57,8 @@ class _MapsHomeState extends State<DashboardScreen> {
               ),
             ),
             Expanded(
-                flex: 1,
-                child:buttonWidget(),
+              flex: 1,
+              child: buttonWidget(),
             ),
           ],
         ),
@@ -69,51 +66,51 @@ class _MapsHomeState extends State<DashboardScreen> {
     );
   }
 
-  Widget mapWidget(){
+  Widget mapWidget() {
     return GoogleMap(
-        mapType: MapType.normal,
-        markers: _createMarker(),
-        initialCameraPosition: CameraPosition(
-          target: LatLng(position.latitude,position.longitude),
-          zoom: 14.5,
-        ),
-        onMapCreated: (GoogleMapController controller){
-          _controller = controller;
-        },
+      mapType: MapType.normal,
+      markers: _createMarker(),
+      initialCameraPosition: CameraPosition(
+        target: LatLng(position.latitude, position.longitude),
+        zoom: 14.5,
+      ),
+      onMapCreated: (GoogleMapController controller) {
+        _controller = controller;
+      },
     );
   }
 
-  Widget cekWidget(){
+  Widget cekWidget() {
     return Container(
-        child: FlatButton(
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 10.0),
-            width: double.infinity,
-            child: Text(
-              'Check In',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18.0,
-              ),
-              textAlign: TextAlign.center,
+      child: FlatButton(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 10.0),
+          width: double.infinity,
+          child: Text(
+            'Check In',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
             ),
-            decoration: BoxDecoration(
-              color: Color(0xFF5C9AD4),
-              borderRadius: BorderRadius.circular(10.0),
-            ),
+            textAlign: TextAlign.center,
           ),
-          onPressed: (){
-            buttonAction();
-          },
+          decoration: BoxDecoration(
+            color: Color(0xFF5C9AD4),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
         ),
+        onPressed: () {
+          buttonAction();
+        },
+      ),
     );
   }
 
-  buttonAction(){
+  buttonAction() {
     setState(() => _isButtonDisabled = !_isButtonDisabled);
   }
 
-  Widget clockWidget(){
+  Widget clockWidget() {
     return Container(
       height: 70,
       alignment: Alignment.center,
@@ -136,30 +133,37 @@ class _MapsHomeState extends State<DashboardScreen> {
     );
   }
 
-  Widget buttonWidget(){
+  Widget buttonWidget() {
     return SizedBox(
-        width: double.infinity,
-        child: RaisedButton(
-          child: Text(
-            'Next',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
-            ),
+      width: double.infinity,
+      child: RaisedButton(
+        child: Text(
+          'Next',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20.0,
           ),
-          onPressed: _isButtonDisabled ? null : () {},
-          color: Color(0xFFE35E13),
         ),
+        onPressed: _isButtonDisabled
+            ? null
+            : () {
+                Navigator.pushNamed(context, '/second');
+              },
+        // onPressed: () {Navigator.pushNamed(context, '/second'); },
+        color: Color(0xFFE35E13),
+      ),
     );
   }
 
-  Set<Marker> _createMarker(){
+  Set<Marker> _createMarker() {
     return <Marker>[
       Marker(
         markerId: MarkerId("Current Location"),
-        position: LatLng(position.latitude,position.longitude),
+        position: LatLng(position.latitude, position.longitude),
         icon: BitmapDescriptor.defaultMarker,
-        infoWindow: InfoWindow(title: "Current Location",),
+        infoWindow: InfoWindow(
+          title: "Current Location",
+        ),
       ),
     ].toSet();
   }

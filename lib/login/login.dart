@@ -65,7 +65,7 @@ class _LoginState extends State<Login> {
         alignment: Alignment.center,
         padding: EdgeInsets.all(20.0),
         child: Form(
-        key: _key,
+          key: _key,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center, //buat colomn
             children: <Widget>[
@@ -86,9 +86,7 @@ class _LoginState extends State<Login> {
                   fontSize: 16.0,
                 ),
               ),
-              Padding(
-                  padding: EdgeInsets.only(top: 20.0)
-              ),
+              Padding(padding: EdgeInsets.only(top: 20.0)),
               Container(
                 // width: 200,
                 // height: 100,
@@ -100,20 +98,17 @@ class _LoginState extends State<Login> {
                   },
                   onSaved: (e) => username = e,
                   decoration: InputDecoration(
-                    hintText: "Username",
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                      hintText: "Username",
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
                             // color: Colors.black,
-                          width: 1.5,
-                        ),
-                        borderRadius: BorderRadius.circular(5)),
-                    border: OutlineInputBorder()
-                  ),
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(5)),
+                      border: OutlineInputBorder()),
                 ),
               ),
-              Padding(
-                  padding: EdgeInsets.only(top: 20.0)
-              ),
+              Padding(padding: EdgeInsets.only(top: 20.0)),
               Container(
                 // width: 200,
                 // height: 100,
@@ -130,8 +125,9 @@ class _LoginState extends State<Login> {
                       onPressed: () {
                         _showpass();
                       },
-                      icon: Icon(
-                          showpassword ? Icons.visibility_off : Icons.visibility),
+                      icon: Icon(showpassword
+                          ? Icons.visibility_off
+                          : Icons.visibility),
                     ),
                     hintText: "Password",
                     enabledBorder: OutlineInputBorder(
@@ -144,9 +140,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              Padding(
-                  padding: EdgeInsets.only(top: 20.0)
-              ),
+              Padding(padding: EdgeInsets.only(top: 20.0)),
               Container(
                 child: RaisedButton(
                   color: Color(0xFF001048),
