@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:woicon/form/form.dart';
 import 'package:woicon/login/login.dart';
 import 'package:woicon/work_order/work_order.dart';
 
@@ -13,6 +14,10 @@ mixin RouteGenerator {
         return MaterialPageRoute(
             settings: RouteSettings(name: WorkOrder.routeName),
             builder: (_) => WorkOrder());
+      case FormWo.routeName:
+        return MaterialPageRoute(
+            settings: RouteSettings(name: FormWo.routeName),
+            builder: (_) => FormWo());
       default:
         return _errorRoute();
     }

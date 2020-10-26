@@ -22,7 +22,8 @@ class _LoginState extends State<Login> {
   }
 
   login() async {
-    final response = await http.post("http://10.0.2.2/flutter/login.php",
+    final response = await http.post(
+        "http://koneksiflutter.000webhostapp.com/login.php",
         body: {"username": username, "password": password});
     final data = jsonDecode(response.body);
     int value = data['value'];
