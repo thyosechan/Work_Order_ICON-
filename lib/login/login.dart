@@ -32,7 +32,7 @@ class _LoginState extends State<Login> {
     // String namaAPI = data['nama'];
     // String id = data['id'];
     if (value == 1) {
-      Navigator.pushNamed(context, '/location');
+      Navigator.pushNamed(context, '/work');
       print(pesan);
     } else {
       showDialog(
