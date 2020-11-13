@@ -36,6 +36,15 @@ class _FormWoState extends State<FormWo> {
     });
   }
 
+  void reset2() {
+    setState(() {
+      txtradio1 = "";
+      txtradio2 = "";
+      txtradio3 = "";
+      txtradio4 = "";
+    });
+  }
+
   void _pilihr1(String value) {
     setState(() {
       r1 = value;
